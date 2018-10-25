@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
-  console.log(req.body['repository']);
+  console.log(req.body['repository']['default_branch']);
   res.end();
 });
 
