@@ -3,8 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
-  var payload = JSON.parse(req.body);
-  console.log(payload)
+  console.log(req.body);
   res.end();
 });
 
