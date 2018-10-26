@@ -26,7 +26,7 @@ router.post('/', function (req, res, next) {
     case "dev":
     {
       new Promise(resolve => {
-        exec('cd /home/ubuntu/server-web-dev &&  git pull origin dev && sudo systemctl restart server-web-master.service',
+        exec('cd /home/ubuntu/server-web-dev &&  git pull origin dev && sudo systemctl restart server-web-dev.service',
           (error, stdout, stderr) => {
             console.log(`${stdout}`);
             console.error(`${stderr}`);
