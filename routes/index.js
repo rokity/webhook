@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var exec = require('child_process').exec;
 
-/* GET home page. */
+/* POST GITHUB */
 router.post('/', function (req, res, next) {
 
   var branch = req.body['ref'].split('/')[2]
@@ -26,7 +26,7 @@ router.post('/', function (req, res, next) {
     case "dev":
     {
       new Promise(resolve => {
-        exec('cd /home/ubuntu/server-web-dev &&  git pull origin dev &&  npm install && sudo systemctl restart server-web-dev.service',
+        exec('cd /home/ubuntu/server-web-dev &&  git pull origin dev &&  npm install && wsudo systemctl restart server-web-dev.service',
           (error, stdout, stderr) => {
             console.log(`${stdout}`);
             console.error(`${stderr}`);
@@ -43,5 +43,8 @@ router.post('/', function (req, res, next) {
       res.end();
   }
 });
+
+
+
 
 module.exports = router;

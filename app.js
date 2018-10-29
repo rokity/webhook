@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/githubwebhook', indexRouter);
+app.use('/webhook', indexRouter);
 
 
 // catch 404 and forward to error handler
