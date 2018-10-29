@@ -10,7 +10,7 @@ router.post('/', function (req, res, next) {
     case "master":
       {
         new Promise(resolve => {
-          exec('cd /home/ubuntu/server-web-master-gitlab &&  git pull gitlab master && npm install && sudo systemctl restart server-web-master-gitlab.service',
+          exec('cd /home/ubuntu/server-web-master-gitlab &&  git pull origin master && npm install && sudo systemctl restart server-web-master-gitlab.service',
             (error, stdout, stderr) => {
               console.log(`${stdout}`);
               console.error(`${stderr}`);
@@ -26,7 +26,7 @@ router.post('/', function (req, res, next) {
     case "dev":
     {
       new Promise(resolve => {
-        exec('cd /home/ubuntu/server-web-dev-gitlab &&  git pull gitlab dev &&  npm install && wsudo systemctl restart server-web-dev-gitlab.service',
+        exec('cd /home/ubuntu/server-web-dev-gitlab &&  git pull origin dev &&  npm install && wsudo systemctl restart server-web-dev-gitlab.service',
           (error, stdout, stderr) => {
             console.log(`${stdout}`);
             console.error(`${stderr}`);
