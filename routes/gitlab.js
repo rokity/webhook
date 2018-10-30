@@ -4,7 +4,10 @@ var exec = require('child_process').exec;
 
 /* POST GITHUB */
 router.post('/', function (req, res, next) {
-
+  console.log("req.body "+req.body)
+  console.log("ref "+req.body['ref'])
+  console.log("split "+req.body['ref'].split('/'))
+  console.log("split 2 "+req.body['ref'].split('/')[2])
   var branch = req.body['ref'].split('/')[2]
   switch (branch) {
     case "master":
